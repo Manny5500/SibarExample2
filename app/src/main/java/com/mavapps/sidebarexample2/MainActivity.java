@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             int itemId = item.getItemId();
 
             if (itemId == R.id.nav_home) {
-                showToast("Home selected");
+                showToast("Home  selected");
             } else if (itemId == R.id.nav_settings) {
                 showToast("Settings selected");
             } else if (itemId == R.id.nav_about) {
