@@ -8,7 +8,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- Main content with toolbar and frame inside a vertical layout -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -22,14 +21,37 @@
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-        <FrameLayout
-            android:id="@+id/content_frame"
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:hint="Employee"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            app:boxBackgroundMode="outline">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Add Field Button -->
+        <Button
+            android:id="@+id/btn_add_field"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Field"
+            android:layout_margin="16dp" />
+
+        <!-- Dynamic Fields Container -->
+        <LinearLayout
+            android:id="@+id/field_container"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp" />
+
+
     </LinearLayout>
 
-    <!-- Sidebar -->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation_view"
         android:layout_width="wrap_content"
@@ -38,5 +60,5 @@
         android:fitsSystemWindows="true"
         android:background="@android:color/white"
         app:menu="@menu/drawer_menu" />
-
 </androidx.drawerlayout.widget.DrawerLayout>
+
